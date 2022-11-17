@@ -320,9 +320,7 @@ func (svg *SVG) Polygon(x []int, y []int, s ...string) {
 // Standard Reference: http://www.w3.org/TR/SVG11/shapes.html#RectElement
 func (svg *SVG) Rect(x int, y int, w int, h int, s ...string) {
 	// svg.printf(`<rect %s %s`, dim(x, y, w, h), endstyle(s, emptyclose))
-
-	svg.printf(`<rect `)
-	svg.printf(`x="%d" y="%d" width="%d" height="%d"`, x, y, w, h)
+	svg.printf(`<rect x="%d" y="%d" width="%d" height="%d"`, x, y, w, h)
 
 	if len(s) > 0 {
 		for i := 0; i < len(s); i++ {
@@ -333,8 +331,7 @@ func (svg *SVG) Rect(x int, y int, w int, h int, s ...string) {
 			}
 		}
 	}
-
-	svg.printf(` %s`, emptyclose)
+	svg.print(emptyclose)
 }
 
 // CenterRect draws a rectangle with its center at x,y, with width w, and height h, with optional style
