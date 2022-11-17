@@ -325,7 +325,7 @@ func (svg *SVG) Rect(x int, y int, w int, h int, s ...string) {
 	if len(s) > 0 {
 		for i := 0; i < len(s); i++ {
 			if strings.Index(s[i], "=") > 0 {
-				svg.printf(` %s`, s[i])
+				svg.print(" ", s[i])
 			} else {
 				svg.printf(` style="%s"`, s[i])
 			}
