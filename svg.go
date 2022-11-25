@@ -166,7 +166,7 @@ func (svg *SVG) Gstyle(s string) { svg.println(group("style", s)) }
 // Gtransform begins a group, with the specified transform
 // Standard Reference: http://www.w3.org/TR/SVG11/coords.html#TransformAttribute
 func (svg *SVG) Gtransform(s string) {
-	svg.printf(`<g %s="%s">`, "transform", s)
+	svg.printf(`<g transform="%s">`, s)
 	svg.println("")
 }
 
